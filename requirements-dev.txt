@@ -1,0 +1,7 @@
+-r requirements.txt
+pillow>=11,<14
+reportlab>=4.2,<6
+pypdf>=6,<7
+pdfplumber>=0.11,<1
+fonttools>=4.50,<5
+otf2ttf>=0.2,<1

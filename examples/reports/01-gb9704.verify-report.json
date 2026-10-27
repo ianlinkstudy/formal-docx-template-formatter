@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "formatted": "/var/folders/nf/sr_rgssn631_4fjfs24cv0zr0000gn/T/tmplsmy5s7t/formatted.docx",
+  "reference": "/var/folders/nf/sr_rgssn631_4fjfs24cv0zr0000gn/T/tmplsmy5s7t/input.docx",
+  "template": "GB/T 9704-2012 参考版",
+  "template_mode": "style",
+  "checks": [
+    {
+      "name": "正文与富对象完整性",
+      "passed": true,
+      "evidence": "文本、表格、页眉页脚、图片与公式哈希一致"
+    },
+    {
+      "name": "页面与页边距",
+      "passed": true,
+      "evidence": "样式模式按所选模板页面参数核验；母版模式保留母版分节"
+    },
+    {
+      "name": "段落字体与字号",
+      "passed": true,
+      "evidence": "全部通过"
+    },
+    {
+      "name": "段落对齐、行距与缩进",
+      "passed": true,
+      "evidence": "全部通过"
+    },
+    {
+      "name": "表格字体与字号",
+      "passed": true,
+      "evidence": "全部通过"
+    }
+  ],
+  "rich_objects": {
+    "formula_count": 0,
+    "ole_object_count": 0,
+    "inline_image_count": 1,
+    "floating_object_count": 0,
+    "image_part_hashes": [
+      "4f88a69782efab4f5863bdb7c9dc997b6aaa35779f6fc045c2e4eb0d75c01cf3"
+    ]
+  },
+  "warnings": []
+}

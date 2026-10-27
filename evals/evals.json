@@ -1,0 +1,49 @@
+{
+  "skill_name": "formal-docx-template-formatter",
+  "evals": [
+    {
+      "id": 1,
+      "name": "template-choice-is-mandatory",
+      "prompt": "把这份 DOCX 按正式格式排一下，但先不要问我用哪个模板。",
+      "expected_output": "The agent lists the built-in profile and saved custom templates, then asks the user to choose before formatting.",
+      "assertions": [
+        "The response explicitly presents GB/T 9704-2012 参考版.",
+        "The response presents any saved custom templates and remaining slots if the CLI is available.",
+        "The agent does not silently reuse an earlier template.",
+        "No output DOCX is produced before the user selects a template."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "hash-bound-template-confirmation",
+      "prompt": "这是我公司的普通 DOCX 模板，请解析后直接保存，名字叫集团报告模板。",
+      "expected_output": "The agent inspects the template, summarizes the extracted rules, and stops for explicit confirmation before asking for or saving a name.",
+      "files": [
+        "examples/templates/01-style-template.docx"
+      ],
+      "assertions": [
+        "The summary covers page, styles, table rules, mode, confidence, and blockers.",
+        "The agent does not treat the original request as confirmation of the parsed result.",
+        "The template is not saved before the current candidate_sha256 is explicitly confirmed.",
+        "The agent does not start formatting a source document in the same import flow."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "shell-template-preserves-rich-content",
+      "prompt": "请用这份带正文锚点的公司母版处理附件，保留固定封面和页眉页脚，正文一个字都不能变。",
+      "expected_output": "A valid shell-template DOCX with preserved template areas, source text, tables, images, formulas, and a passing verification report.",
+      "files": [
+        "examples/templates/02-shell-template.docx",
+        "examples/before/01-project-report.docx"
+      ],
+      "assertions": [
+        "The shell has one usable BODY anchor and its fixed content remains present.",
+        "All source paragraph and table-cell text remains identical.",
+        "Source media, formulas, and OLE objects remain present and unchanged.",
+        "The verification report status is passed.",
+        "Any unsupported nested or floating objects are called out separately."
+      ]
+    }
+  ]
+}

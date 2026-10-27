@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "status": "success",
+  "input": "examples/before/01-project-report.docx",
+  "output": "examples/after/02-company-shell-project-report.docx",
+  "template": "示例公司母版",
+  "template_id": "97a8bd86274d49e988441c10d8b36610",
+  "template_mode": "shell",
+  "semantic_integrity": {
+    "passed": true,
+    "semantic_hash": "709e52e52854a5167ebe6ef6af065a7c149c679c4d5f02a5e18e95e960d9eb42"
+  },
+  "changes": {
+    "paragraphs_formatted": 11,
+    "tables_formatted": 1,
+    "heading2_split": 1,
+    "inline_images_resized": 0
+  },
+  "rich_objects": {
+    "formula_count": 0,
+    "ole_object_count": 0,
+    "nested_table_count": 0,
+    "floating_object_count": 0
+  },
+  "warnings": []
+}

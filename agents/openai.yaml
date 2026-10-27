@@ -1,0 +1,6 @@
+interface:
+  display_name: "Word 模板排版"
+  short_description: "选择 GB 或自定义模板，排版并核验中文 DOCX"
+  default_prompt: "使用 $formal-docx-template-formatter 让我先选择排版模板，再处理这份 DOCX。"
+policy:
+  allow_implicit_invocation: true
